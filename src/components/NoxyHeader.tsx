@@ -1,4 +1,4 @@
-import noxyAvatar from "@/assets/noxy-avatar.jpg";
+import noxyAvatar from "@/assets/noxy-avatar.png";
 
 interface NoxyHeaderProps {
   userName?: string;
@@ -12,7 +12,7 @@ export const NoxyHeader = ({ userName = "friend" }: NoxyHeaderProps) => {
           <img 
             src={noxyAvatar} 
             alt="Noxy" 
-            className="w-16 h-16 rounded-full object-cover shadow-glow floating"
+            className="w-16 h-16 object-contain shadow-glow floating hover:scale-110 transition-transform duration-300"
           />
           <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full pulse-glow"></div>
         </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Send, Heart } from "lucide-react";
 import { BackButton } from "../BackButton";
-import noxyAvatar from "@/assets/noxy-avatar.jpg";
+import noxyAvatar from "@/assets/noxy-avatar.png";
 
 interface ChatMessage {
   id: string;
@@ -102,7 +102,7 @@ export const ChatSection = ({ onBack }: ChatSectionProps) => {
         <img 
           src={noxyAvatar} 
           alt="Noxy" 
-          className="w-10 h-10 rounded-full object-cover shadow-soft"
+          className="w-10 h-10 object-contain shadow-soft hover:shadow-glow transition-shadow duration-300"
         />
         <div>
           <h2 className="text-xl font-bold text-primary">Chat with Noxy</h2>
@@ -122,7 +122,7 @@ export const ChatSection = ({ onBack }: ChatSectionProps) => {
                 <img 
                   src={noxyAvatar} 
                   alt="Noxy" 
-                  className="w-6 h-6 rounded-full object-cover flex-shrink-0 floating"
+                  className="w-6 h-6 object-contain flex-shrink-0 floating"
                 />
               )}
               
@@ -140,7 +140,7 @@ export const ChatSection = ({ onBack }: ChatSectionProps) => {
               <img 
                 src={noxyAvatar} 
                 alt="Noxy" 
-                className="w-6 h-6 rounded-full object-cover flex-shrink-0"
+                className="w-6 h-6 object-contain flex-shrink-0"
               />
               <div className="chat-bubble-noxy">
                 <div className="flex gap-1">
