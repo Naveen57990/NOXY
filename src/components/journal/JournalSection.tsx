@@ -57,15 +57,15 @@ export const JournalSection = ({ onBack }: JournalSectionProps) => {
             <p className="text-muted-foreground">No entries yet. Start writing to see them here!</p>
           </div>
         ) : (
-          <div className="space-y-4">
-            {entries.map((entry) => (
-              <div key={entry.id} className="noxy-card">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                  <Calendar className="w-4 h-4" />
-                  <span>{entry.timestamp}</span>
-                </div>
-                <p className="text-foreground whitespace-pre-wrap">{entry.content}</p>
+        <div className="space-y-4">
+          {entries.map((entry, index) => (
+            <div key={entry.id} className="noxy-card shimmer animate-fadeIn" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                <Calendar className="w-4 h-4 animate-pulse" />
+                <span>{entry.timestamp}</span>
               </div>
+              <p className="text-foreground whitespace-pre-wrap">{entry.content}</p>
+            </div>
             ))}
           </div>
         )}
@@ -110,7 +110,7 @@ export const JournalSection = ({ onBack }: JournalSectionProps) => {
                 <h3 className="text-lg font-semibold text-card-foreground">Past Entries</h3>
                 <p className="text-muted-foreground text-sm">{entries.length} entries saved</p>
               </div>
-              <BookOpen className="w-6 h-6 text-primary" />
+              <BookOpen className="w-6 h-6 text-primary floating" />
             </div>
           </button>
         )}

@@ -93,20 +93,20 @@ export const RitualsList = ({ onBack }: RitualsListProps) => {
       <div className="max-w-md mx-auto">
         <BackButton onClick={() => setSelectedRitual(null)} />
         
-        <div className="noxy-card">
-          <div className="text-center mb-6">
+        <div className="noxy-card shimmer">
+          <div className="text-center mb-6 animate-fadeIn">
             <h2 className="text-2xl font-bold text-primary mb-2">{selectedRitual.title}</h2>
             <p className="text-muted-foreground">{selectedRitual.description}</p>
             <div className="flex items-center justify-center gap-1 mt-2 text-sm text-muted-foreground">
-              <Clock className="w-4 h-4" />
+              <Clock className="w-4 h-4 animate-pulse" />
               <span>{selectedRitual.estimatedTime}</span>
             </div>
           </div>
 
           <div className="space-y-4 mb-6">
             {selectedRitual.steps.map((step, index) => (
-              <div key={index} className="flex gap-3">
-                <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5">
+              <div key={index} className="flex gap-3 animate-fadeIn" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5 pulse-glow">
                   {index + 1}
                 </div>
                 <p className="text-foreground">{step}</p>
@@ -140,22 +140,24 @@ export const RitualsList = ({ onBack }: RitualsListProps) => {
             <button
               key={ritual.id}
               onClick={() => setSelectedRitual(ritual)}
-              className="noxy-card w-full text-left hover:scale-105 transition-all duration-300 relative"
+              className="noxy-card w-full text-left hover:scale-105 transition-all duration-500 relative group shimmer"
             >
               {isCompleted && (
-                <div className="absolute top-4 right-4">
-                  <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+                <div className="absolute top-4 right-4 animate-bounceGentle">
+                  <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center pulse-glow">
                     <Check className="w-4 h-4" />
                   </div>
                 </div>
               )}
               
-              <h3 className="text-lg font-semibold text-card-foreground mb-2">{ritual.title}</h3>
-              <p className="text-muted-foreground text-sm mb-3">{ritual.description}</p>
-              
-              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                <Clock className="w-3 h-3" />
-                <span>{ritual.estimatedTime}</span>
+              <div className="relative z-10">
+                <h3 className="text-lg font-semibold text-card-foreground mb-2 group-hover:text-primary transition-colors">{ritual.title}</h3>
+                <p className="text-muted-foreground text-sm mb-3">{ritual.description}</p>
+                
+                <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                  <Clock className="w-3 h-3" />
+                  <span>{ritual.estimatedTime}</span>
+                </div>
               </div>
             </button>
           );

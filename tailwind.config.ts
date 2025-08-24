@@ -88,11 +88,52 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+					'33%': { transform: 'translateY(-10px) rotate(1deg)' },
+					'66%': { transform: 'translateY(-5px) rotate(-1deg)' }
+				},
+				pulseGlow: {
+					'0%, 100%': { boxShadow: 'var(--shadow-soft)' },
+					'50%': { boxShadow: 'var(--shadow-glow)' }
+				},
+				bounceGentle: {
+					'0%, 100%': { transform: 'translateY(0) scale(1)' },
+					'50%': { transform: 'translateY(-8px) scale(1.02)' }
+				},
+				slideInLeft: {
+					'0%': { transform: 'translateX(-20px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				slideInRight: {
+					'0%': { transform: 'translateX(20px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				shimmer: {
+					'0%': { left: '-100%' },
+					'100%': { left: '100%' }
+				},
+				wiggle: {
+					'0%, 100%': { transform: 'rotate(-2deg)' },
+					'50%': { transform: 'rotate(2deg)' }
+				},
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				float: 'float 6s ease-in-out infinite',
+				pulseGlow: 'pulseGlow 2s ease-in-out infinite',
+				bounceGentle: 'bounceGentle 2s ease-in-out infinite',
+				slideInLeft: 'slideInLeft 0.3s ease-out',
+				slideInRight: 'slideInRight 0.3s ease-out',
+				shimmer: 'shimmer 2s infinite',
+				wiggle: 'wiggle 1s ease-in-out infinite',
+				fadeIn: 'fadeIn 0.5s ease-out'
 			}
 		}
 	},

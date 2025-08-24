@@ -122,7 +122,7 @@ export const ChatSection = ({ onBack }: ChatSectionProps) => {
                 <img 
                   src={noxyAvatar} 
                   alt="Noxy" 
-                  className="w-6 h-6 rounded-full object-cover flex-shrink-0"
+                  className="w-6 h-6 rounded-full object-cover flex-shrink-0 floating"
                 />
               )}
               
@@ -170,9 +170,9 @@ export const ChatSection = ({ onBack }: ChatSectionProps) => {
         <button
           onClick={sendMessage}
           disabled={!currentMessage.trim() || isTyping}
-          className="noxy-button px-4 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+          className="noxy-button px-4 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shimmer"
         >
-          {isTyping ? <Heart className="w-4 h-4 animate-pulse" /> : <Send className="w-4 h-4" />}
+          {isTyping ? <Heart className="w-4 h-4 animate-pulse text-primary-foreground" /> : <Send className="w-4 h-4 text-primary-foreground" />}
         </button>
       </div>
     </div>
