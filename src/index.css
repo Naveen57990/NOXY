@@ -2,41 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Noxy Design System - Pastel, warm, and playful */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Main Background Gradients */
+    --background: 320 100% 98%;
+    --foreground: 280 15% 25%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 280 15% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 280 15% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Noxy Brand Colors - Warm Pastels */
+    --primary: 320 65% 75%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 320 85% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 280 55% 85%;
+    --secondary-foreground: 280 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 320 30% 96%;
+    --muted-foreground: 280 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 65% 85%;
+    --accent-foreground: 280 15% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 320 25% 92%;
+    --input: 320 25% 95%;
+    --ring: 320 65% 75%;
 
-    --radius: 0.5rem;
+    /* Noxy Gradients */
+    --gradient-main: linear-gradient(135deg, hsl(320, 85%, 92%) 0%, hsl(280, 75%, 94%) 50%, hsl(200, 80%, 94%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(320, 40%, 98%) 100%);
+    --gradient-rituals: linear-gradient(135deg, hsl(280, 65%, 88%) 0%, hsl(320, 65%, 90%) 100%);
+    --gradient-journal: linear-gradient(135deg, hsl(200, 65%, 88%) 0%, hsl(240, 65%, 90%) 100%);
+    --gradient-chat: linear-gradient(135deg, hsl(320, 65%, 88%) 0%, hsl(340, 65%, 90%) 100%);
+    --gradient-noxy: linear-gradient(135deg, hsl(320, 85%, 75%) 0%, hsl(280, 85%, 80%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(320, 50%, 85%);
+    --shadow-glow: 0 0 30px hsl(320, 65%, 85%);
+    --shadow-card: 0 8px 32px -8px hsl(320, 40%, 75%);
+
+    --radius: 1.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +71,41 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Noxy also works beautifully in dark mode */
+    --background: 280 15% 8%;
+    --foreground: 320 40% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 280 15% 12%;
+    --card-foreground: 320 40% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 280 15% 12%;
+    --popover-foreground: 320 40% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 320 75% 70%;
+    --primary-foreground: 280 15% 8%;
+    --primary-glow: 320 85% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 280 25% 20%;
+    --secondary-foreground: 320 40% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 280 15% 15%;
+    --muted-foreground: 280 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 55% 70%;
+    --accent-foreground: 280 15% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 280 15% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 280 15% 20%;
+    --input: 280 15% 18%;
+    --ring: 320 75% 70%;
+
+    --gradient-main: linear-gradient(135deg, hsl(280, 25%, 12%) 0%, hsl(320, 35%, 15%) 50%, hsl(200, 35%, 18%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(280, 15%, 15%) 0%, hsl(320, 25%, 18%) 100%);
+    --shadow-soft: 0 4px 20px -2px hsl(280, 50%, 5%);
+    --shadow-glow: 0 0 30px hsl(320, 65%, 25%);
+    --shadow-card: 0 8px 32px -8px hsl(280, 40%, 8%);
   }
 }
 
@@ -100,6 +115,39 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: var(--gradient-main);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+@layer components {
+  .noxy-card {
+    @apply rounded-3xl p-6 backdrop-blur-sm border-0;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .noxy-button {
+    @apply rounded-2xl px-6 py-3 font-medium transition-all duration-300;
+    background: var(--gradient-noxy);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .noxy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .chat-bubble-user {
+    @apply rounded-2xl px-4 py-3 max-w-xs ml-auto;
+    background: var(--gradient-rituals);
+  }
+
+  .chat-bubble-noxy {
+    @apply rounded-2xl px-4 py-3 max-w-xs mr-auto;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-soft);
   }
 }
